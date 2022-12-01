@@ -18,9 +18,9 @@ $chiffreADeviner = Get-Random -Minimum 10 -Maximum 100
 # Affiche le chiffre à deviner
 Write-Host "le chiffre à deviner est $chiffreADeviner"
 # Demande à l'utilisateur de saisir une valeur
-$chiffreADeviner1 = Read-Host 'Saisir une valeur'
+$valeurasaisir = Read-Host 'Saisir une valeur'
 # Affiche un message 
-if ($chiffreADeviner -eq $chiffreADeviner1){
+if ($chiffreADeviner -eq $valeurasaisir){
     Write-Host "Vous avez trouvé le bon chiffre"
 } else {
     Write-Host "Vous n'avez pas trouvé le bon chiffre, le chiffre à deviner était $chiffreADeviner"
@@ -36,21 +36,23 @@ if ($chiffreADeviner -eq $chiffreADeviner1){
 # Boucle demandant à l'utilisateur de saisir un chiffre qui est compris entre le minimum et le maximum
 $chiffreADeviner = Get-Random -Minimum 10 -Maximum 100
 # Affiche le chiffre à deviner
-Write-Host "le chiffre à deviner est $chiffreADeviner"
+Write-Host "Le chiffre à deviner est $chiffreADeviner"
 # Rentrer dans la boucle
 do {
     # Demande à l'utilisateur de saisir une valeur
-    $chiffreADeviner1 = Read-Host 'Saisir une valeur'
+    $valeurasaisir = Read-Host 'Saisir une valeur'
     # Si la valeur saisie est égale au chiffre à deviner alors on sort de la boucle
-    if ($chiffreADeviner -eq $chiffreADeviner1){
+    if ($chiffreADeviner -eq $valeurasaisir){
         Write-Host "Vous avez trouvé le bon chiffre"
     # Si la valeur saisie est plus grand que le chiffre à deviner alors on affiche un message et on continue dans la boucle 
-    } elseif ($chiffreADeviner -gt $chiffreADeviner1){
-        Write-Host "Vous n'avez pas trouvé le bon chiffre, le chiffre à deviner est plus grand que $chiffreADeviner1"
+    } 
+    elseif ($chiffreADeviner -gt $valeurasaisir){
+        Write-Host "Vous n'avez pas trouvé le bon chiffre, le chiffre à deviner est plus grand que $valeurasaisir"
         # Si la valeur saisie est plus petit que le chiffre à deviner alors on affiche un message et on continue dans la boucle
-    } else {
-        Write-Host "Vous n'avez pas trouvé le bon chiffre, le chiffre à deviner est plus petit que $chiffreADeviner1"
+    } 
+    else {
+        Write-Host "Vous n'avez pas trouvé le bon chiffre, le chiffre à deviner est plus petit que $valeurasaisir"
     }
     # On continue dans la boucle tant que la valeur saisie n'est pas égale au chiffre à deviner
-} while ($chiffreADeviner -ne $chiffreADeviner1)
+} while ($chiffreADeviner -ne $valeurasaisir)
 
